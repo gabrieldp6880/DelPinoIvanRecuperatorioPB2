@@ -3,7 +3,7 @@ package DelPinoIvanRecuperatorioPB2;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class Luchador {
+public abstract class Luchador implements Comparable <Luchador> {
 	
 	private String nombre;
 	private Integer poder;

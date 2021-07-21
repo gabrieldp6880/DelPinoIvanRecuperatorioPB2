@@ -11,4 +11,9 @@ public class Heroe extends Luchador {
 		return this.getClass().getSimpleName();
 	}
 
+	@Override
+	public int compareTo(Luchador o) {
+		return this.getPoder().compareTo(o.getPoder());
+	}
+
 }

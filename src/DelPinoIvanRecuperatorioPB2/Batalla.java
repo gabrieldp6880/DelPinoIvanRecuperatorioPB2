@@ -16,11 +16,11 @@ public class Batalla {
 		this.villanosGanadores = new TreeSet <>();
 	}
 
-	public void enfrentarPersonajes (Heroe l1, Villano l2) {
-		if(l1.getPoder()>=l2.getPoder()) {
-			heroesGanadores.add(l1);
+	public void enfrentarPersonajes (Heroe h3, Villano v3) {
+		if(h3.getPoder()>=v3.getPoder()) {
+			heroesGanadores.add(h3);
 		}else {
-			villanosGanadores.add(l2);
+			villanosGanadores.add(v3);
 		}
 	}
 	
@@ -36,19 +36,43 @@ public class Batalla {
 		return heroesGanadoresOrdenados;
 	}
 	
-	private TreeSet <Luchador> ordenarLuchadores (Comparator criterio, TreeSet <Luchador> luchadores){
+	public TreeSet <Luchador> ordenarLuchadores (Comparator criterio, TreeSet <Luchador> luchadores){
 		
 		TreeSet <Luchador> luchadoresOrdenados = new TreeSet<> (criterio);
 		luchadoresOrdenados.addAll(luchadores);
 		return luchadoresOrdenados;
 	}
 	
-	private String resultadoDeBatalla () throws WorldDestroyedException {
+	public String resultadoDeBatalla () throws WorldDestroyedException {
 		if(heroesGanadores.size()>villanosGanadores.size()) {
 			return "El mundo esta salvado";
 		}else {
 			throw new WorldDestroyedException();
 		}
+	}
+
+	public String getNombreBatalla() {
+		return nombreBatalla;
+	}
+
+	public void setNombreBatalla(String nombreBatalla) {
+		this.nombreBatalla = nombreBatalla;
+	}
+
+	public TreeSet<Luchador> getHeroesGanadores() {
+		return heroesGanadores;
+	}
+
+	public void setHeroesGanadores(TreeSet<Luchador> heroesGanadores) {
+		this.heroesGanadores = heroesGanadores;
+	}
+
+	public TreeSet<Luchador> getVillanosGanadores() {
+		return villanosGanadores;
+	}
+
+	public void setVillanosGanadores(TreeSet<Luchador> villanosGanadores) {
+		this.villanosGanadores = villanosGanadores;
 	}
 	
 	
