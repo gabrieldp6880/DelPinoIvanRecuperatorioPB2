@@ -39,6 +39,7 @@ public abstract class Luchador implements Comparable <Luchador> {
 		}else {
 			this.poder=this.poder*2;
 		}
+		gemas.add(g1);
 	}
 	
 }
